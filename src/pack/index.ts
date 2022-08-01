@@ -44,7 +44,7 @@ export async function pack ({ input, blockstore: userBlockstore, hasher, maxChun
       maxChildrenPerNode: maxChildrenPerNode || unixfsImporterOptionsDefault.maxChildrenPerNode,
       wrapWithDirectory: wrapWithDirectory === false ? false : unixfsImporterOptionsDefault.wrapWithDirectory,
       rawLeaves: rawLeaves == null ? unixfsImporterOptionsDefault.rawLeaves : rawLeaves,
-      cidVersion: cidVersion || unixfsImporterOptionsDefault.cidVersion
+      cidVersion: typeof cidVersion === "number" ? cidVersion : unixfsImporterOptionsDefault.cidVersion
     })
   ))
 

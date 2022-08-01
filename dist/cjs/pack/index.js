@@ -24,7 +24,7 @@ async function pack({ input, blockstore: userBlockstore, hasher, maxChunkSize, m
         maxChildrenPerNode: maxChildrenPerNode || constants_1.unixfsImporterOptionsDefault.maxChildrenPerNode,
         wrapWithDirectory: wrapWithDirectory === false ? false : constants_1.unixfsImporterOptionsDefault.wrapWithDirectory,
         rawLeaves: rawLeaves == null ? constants_1.unixfsImporterOptionsDefault.rawLeaves : rawLeaves,
-        cidVersion: cidVersion || constants_1.unixfsImporterOptionsDefault.cidVersion
+        cidVersion: typeof cidVersion === "number" ? cidVersion : constants_1.unixfsImporterOptionsDefault.cidVersion
     })));
     if (!rootEntry || !rootEntry.cid) {
         throw new Error('given input could not be parsed correctly');

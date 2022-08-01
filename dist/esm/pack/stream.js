@@ -24,7 +24,7 @@ export async function packToStream({ input, writable, blockstore: userBlockstore
         maxChildrenPerNode: maxChildrenPerNode || unixfsImporterOptionsDefault.maxChildrenPerNode,
         wrapWithDirectory: wrapWithDirectory === false ? false : unixfsImporterOptionsDefault.wrapWithDirectory,
         rawLeaves: rawLeaves == null ? unixfsImporterOptionsDefault.rawLeaves : rawLeaves,
-        cidVersion: cidVersion || unixfsImporterOptionsDefault.cidVersion
+        cidVersion: typeof cidVersion === "number" ? cidVersion : unixfsImporterOptionsDefault.cidVersion
     })));
     if (!rootEntry || !rootEntry.cid) {
         throw new Error('given input could not be parsed correctly');

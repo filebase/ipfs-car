@@ -40,7 +40,7 @@ export async function packToStream ({ input, writable, blockstore: userBlockstor
       maxChildrenPerNode: maxChildrenPerNode || unixfsImporterOptionsDefault.maxChildrenPerNode,
       wrapWithDirectory: wrapWithDirectory === false ? false : unixfsImporterOptionsDefault.wrapWithDirectory,
       rawLeaves: rawLeaves == null ? unixfsImporterOptionsDefault.rawLeaves : rawLeaves,
-      cidVersion: cidVersion || unixfsImporterOptionsDefault.cidVersion
+      cidVersion: typeof cidVersion === "number" ? cidVersion : unixfsImporterOptionsDefault.cidVersion
     })
   ))
 
