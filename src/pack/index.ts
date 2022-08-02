@@ -11,7 +11,7 @@ export type { ImportCandidateStream }
 import { Blockstore } from '../blockstore/index'
 import { MemoryBlockStore } from '../blockstore/memory'
 import { unixfsImporterOptionsDefault } from './constants'
-import {CIDVersion} from "multiformats/types/src/cid";
+import { CIDVersion } from "multiformats/types/src/cid";
 
 export interface PackProperties {
   input: ImportCandidateStream | ImportCandidate,
@@ -44,7 +44,7 @@ export async function pack ({ input, blockstore: userBlockstore, hasher, maxChun
       maxChildrenPerNode: maxChildrenPerNode || unixfsImporterOptionsDefault.maxChildrenPerNode,
       wrapWithDirectory: wrapWithDirectory === false ? false : unixfsImporterOptionsDefault.wrapWithDirectory,
       rawLeaves: rawLeaves == null ? unixfsImporterOptionsDefault.rawLeaves : rawLeaves,
-      cidVersion: cidVersion || unixfsImporterOptionsDefault.cidVersion
+      cidVersion: typeof cidVersion === "number" ? cidVersion : unixfsImporterOptionsDefault.cidVersion
     })
   ))
 
