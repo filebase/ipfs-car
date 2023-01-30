@@ -4,6 +4,6 @@ export interface PackToFsProperties extends PackProperties {
     output?: string;
 }
 export declare function packToFs({ input, output, blockstore: userBlockstore, hasher, maxChunkSize, maxChildrenPerNode, wrapWithDirectory, rawLeaves }: PackToFsProperties): Promise<{
-    root: import("multiformats").CID;
+    root: import("multiformats/cid").CID;
     filename: string;
 }>;

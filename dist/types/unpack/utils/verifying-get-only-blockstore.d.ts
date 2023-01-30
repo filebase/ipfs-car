@@ -2,7 +2,7 @@ import { CID } from 'multiformats';
 import { CarReader } from '@ipld/car/api';
 import { BaseBlockstore } from 'blockstore-core';
 import { Blockstore } from '../../blockstore/index';
-declare type verifyingBlockStore = {
+type verifyingBlockStore = {
     get: (cid: CID) => Promise<Uint8Array | undefined>;
 };
 export declare class VerifyingGetOnlyBlockStore extends BaseBlockstore {

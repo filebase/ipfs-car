@@ -6,5 +6,5 @@ export interface PackToStreamProperties extends PackProperties {
     writable: Writable;
 }
 export declare function packToStream({ input, writable, blockstore: userBlockstore, hasher, maxChunkSize, maxChildrenPerNode, wrapWithDirectory, rawLeaves, cidVersion }: PackToStreamProperties): Promise<{
-    root: import("multiformats").CID;
+    root: import("multiformats/cid").CID;
 }>;
